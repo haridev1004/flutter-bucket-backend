@@ -18,16 +18,19 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/user")
     public UserDto createUser(@RequestBody CreateUserRequest request) {
         return userService.createUser(request);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/users")
     public List<UserDto> getAllUsers() {
         return userService.getAllUsers();
     }
 
+    @CrossOrigin(origins = "*")
     @PostMapping("/login")
     public LoginResponse login(@RequestBody LoginRequest request) {
         return userService.login(request);
